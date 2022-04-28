@@ -29,6 +29,27 @@ function Wallet() {
 
 
     }
+    const activateCoinbase = async() => {
+        let provider
+
+        if(window.ethereum.providers) {
+            provider = window.ethereum.providers.find(({ isCoinbaseWallet }) => isCoinbaseWallet)
+            window.ethereum.setSelectedProvider(provider);
+        }
+        
+
+       
+        
+        try {
+            activate(injected) 
+        }
+        catch(e) {
+            console.log(e)
+        }
+
+
+
+    }
     const activateConnector = async (connector) => {
         console.log("hello")
         try {
@@ -48,7 +69,7 @@ function Wallet() {
     <div>
         <button onClick={() => activateMetaMask()}>MetaMask</button>
         <button onClick={()=>activate(walletconnect)}>Wallet Connect</button>
-        <button onClick={()=> activateConnector(walletlink)}>Coinbase</button>
+        <button onClick={()=> activateCoinbase()}>Coinbase</button>
 
 
     </div>
