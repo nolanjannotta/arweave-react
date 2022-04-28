@@ -2,6 +2,7 @@
   "name": "arweave_test",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.5",
     "@ethersproject/providers": "^5.5.3",
